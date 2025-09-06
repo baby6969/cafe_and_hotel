@@ -1,0 +1,270 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Admin Login - The Culinary Canvas</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-[#fcfaf8] antialiased" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+        <div class="flex-grow flex flex-col">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3ede7] px-10 py-4">
+                <div class="flex items-center gap-3 text-[#1b140d]">
+                    <svg class="h-8 w-8 text-[#ec8013]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+                    </svg>
+                    <h1 class="text-[#1b140d] text-xl font-bold tracking-tight">The Culinary Canvas Admin</h1>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="index.html" class="text-sm font-medium text-[#1b140d] hover:text-[#ec8013] transition-colors">← Back to Website</a>
+                </div>
+            </header>
+            
+            <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <div class="w-full max-w-md space-y-8 bg-white p-10 rounded-xl shadow-lg border border-[#f3ede7]">
+                    <div>
+                        <h2 class="mt-6 text-center text-3xl font-extrabold text-[#1b140d]">
+                            Welcome Back
+                        </h2>
+                        <p class="mt-2 text-center text-sm text-[#9a734c]">
+                            Sign in to manage your restaurant's menu and content
+                        </p>
+                    </div>
+                    
+                    <form action="#" class="mt-8 space-y-6" method="POST" id="login-form">
+                        <input name="remember" type="hidden" value="true"/>
+                        <div class="rounded-md shadow-sm -space-y-px">
+                            <div>
+                                <label class="sr-only" for="email-address">Email address</label>
+                                <input autocomplete="email" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-[#ec8013] focus:border-[#ec8013] focus:z-10 sm:text-sm bg-[#f3ede7] h-14" id="email-address" name="email" placeholder="Email address" required="" type="email"/>
+                            </div>
+                            <div>
+                                <label class="sr-only" for="password">Password</label>
+                                <input autocomplete="current-password" class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-[#ec8013] focus:border-[#ec8013] focus:z-10 sm:text-sm bg-[#f3ede7] h-14" id="password" name="password" placeholder="Password" required="" type="password"/>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input class="h-4 w-4 text-[#ec8013] focus:ring-[#ec8013] border-gray-300 rounded" id="remember-me" name="remember-me" type="checkbox"/>
+                                <label class="ml-2 block text-sm text-[#1b140d]" for="remember-me">
+                                    Remember me
+                                </label>
+                            </div>
+                            <div class="text-sm">
+                                <a class="font-medium text-[#ec8013] hover:text-[#d46a00]" href="#">
+                                    Forgot your password?
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <button class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-[#ec8013] hover:bg-[#d46a00] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#d46a00] transition-colors duration-300" type="submit">
+                                <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                    <span class="material-symbols-outlined h-5 w-5 text-[#fcfaf8] group-hover:text-white">lock</span>
+                                </span>
+                                Sign in to Dashboard
+                            </button>
+                        </div>
+                        
+                        <!-- Loading indicator -->
+                        <div id="loading-indicator" class="hidden text-center">
+                            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#ec8013]"></div>
+                            <p class="mt-2 text-sm text-[#9a734c]">Signing you in...</p>
+                        </div>
+                        
+                        <!-- Error message -->
+                        <div id="error-message" class="hidden bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg text-sm">
+                            <div class="flex items-center">
+                                <span class="material-symbols-outlined mr-2">error</span>
+                                <span id="error-text">Invalid credentials. Please try again.</span>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="mt-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-white text-[#9a734c]">Security Notice</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <p class="text-xs text-[#9a734c]">
+                                This is a secure admin area. All login attempts are logged and monitored for security purposes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Admin login functionality
+        const loginForm = document.getElementById('login-form');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const errorMessage = document.getElementById('error-message');
+        const errorText = document.getElementById('error-text');
+        
+        // Rate limiting variables
+        let loginAttempts = 0;
+        const maxAttempts = 5;
+        let lockoutTime = null;
+        
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Check if user is locked out
+            if (lockoutTime && Date.now() < lockoutTime) {
+                const remainingTime = Math.ceil((lockoutTime - Date.now()) / 1000 / 60);
+                showError(`Too many failed attempts. Try again in ${remainingTime} minutes.`);
+                return;
+            }
+            
+            const formData = new FormData(loginForm);
+            const email = formData.get('email');
+            const password = formData.get('password');
+            
+            // Basic client-side validation
+            if (!email || !password) {
+                showError('Please fill in all fields.');
+                return;
+            }
+            
+            // Show loading state
+            showLoading(true);
+            hideError();
+            
+            try {
+                // Simulate API call for authentication
+                const response = await fetch('http://localhost:5000/api/admin/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // Store auth token
+                    localStorage.setItem('adminToken', data.token);
+                    localStorage.setItem('adminUser', JSON.stringify(data.user));
+                    
+                    // Reset login attempts
+                    loginAttempts = 0;
+                    lockoutTime = null;
+                    
+                    // Redirect to admin dashboard
+                    window.location.href = 'admin.html';
+                } else {
+                    const errorData = await response.json();
+                    handleLoginError(errorData.message || 'Login failed');
+                }
+            } catch (error) {
+                // Fallback authentication for demo purposes
+                if ((email === 'admin@culinarycanvas.com' || email === 'admin') && password === 'admin123') {
+                    // Demo login success
+                    localStorage.setItem('adminToken', 'demo-token-' + Date.now());
+                    localStorage.setItem('adminUser', JSON.stringify({
+                        email: email,
+                        name: 'Admin User',
+                        role: 'administrator'
+                    }));
+                    
+                    loginAttempts = 0;
+                    lockoutTime = null;
+                    
+                    window.location.href = 'admin.html';
+                } else {
+                    handleLoginError('Invalid credentials. Please try again.');
+                }
+            } finally {
+                showLoading(false);
+            }
+        });
+        
+        function handleLoginError(message) {
+            loginAttempts++;
+            
+            if (loginAttempts >= maxAttempts) {
+                lockoutTime = Date.now() + (15 * 60 * 1000); // 15 minutes lockout
+                showError('Too many failed attempts. Account locked for 15 minutes.');
+            } else {
+                const remaining = maxAttempts - loginAttempts;
+                showError(`${message} (${remaining} attempts remaining)`);
+            }
+        }
+        
+        function showLoading(show) {
+            const submitButton = loginForm.querySelector('button[type="submit"]');
+            if (show) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Signing in...';
+                loadingIndicator.classList.remove('hidden');
+            } else {
+                submitButton.disabled = false;
+                submitButton.innerHTML = `
+                    <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                        <span class="material-symbols-outlined h-5 w-5 text-[#fcfaf8] group-hover:text-white">lock</span>
+                    </span>
+                    Sign in to Dashboard
+                `;
+                loadingIndicator.classList.add('hidden');
+            }
+        }
+        
+        function showError(message) {
+            errorText.textContent = message;
+            errorMessage.classList.remove('hidden');
+        }
+        
+        function hideError() {
+            errorMessage.classList.add('hidden');
+        }
+        
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('adminToken');
+            if (token) {
+                // Verify token is still valid
+                fetch('http://localhost:5000/api/admin/verify', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        window.location.href = 'admin.html';
+                    } else {
+                        // Token invalid, clear storage
+                        localStorage.removeItem('adminToken');
+                        localStorage.removeItem('adminUser');
+                    }
+                }).catch(() => {
+                    // API not available, allow demo login
+                    console.log('Admin API not available - demo mode enabled');
+                });
+            }
+        });
+        
+        // Security: Clear sensitive data on page unload
+        window.addEventListener('beforeunload', () => {
+            // Clear form data
+            document.getElementById('password').value = '';
+        });
+        
+        // Demo credentials hint for development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            console.log('Demo credentials: admin@culinarycanvas.com / admin123');
+        }
+    </script>
+</body>
+</html>

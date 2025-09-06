@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>The Culinary Canvas</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        :root {
+            --primary-color: #ec8013;
+            --secondary-color: #fcfaf8;
+            --text-primary: #1b140d;
+            --text-secondary: #9a734c;
+        }
+        @layer base {
+            :root {
+                scroll-behavior: smooth;
+            }
+        }
+        @layer components {
+            .nav-link {
+                @apply text-sm font-medium text-[var(--text-primary)] relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--primary-color)] after:transition-all after:duration-300 hover:after:w-full;
+            }
+            .section-active {
+                @apply after:w-full;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[var(--secondary-color)]" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3ede7] bg-[var(--secondary-color)]/80 px-10 py-4 backdrop-blur-sm">
+                <a class="flex items-center gap-3 text-[var(--text-primary)]" href="#home">
+                    <svg class="h-6 w-6 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                    <h1 class="text-[var(--text-primary)] text-xl font-bold tracking-tight">The Culinary Canvas</h1>
+                </a>
+                <nav class="flex flex-1 justify-end items-center gap-8">
+                    <div class="hidden md:flex items-center gap-8">
+                        <a class="nav-link section-active" href="#home">Home</a>
+                        <a class="nav-link" href="menu.html">Menu</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </div>
+                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-5 bg-[var(--primary-color)] text-[var(--secondary-color)] text-sm font-bold shadow-sm transition-all hover:bg-[var(--primary-color)]/90 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-color)]" id="book-table-btn">
+                        <span class="truncate">Book a Table</span>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden text-[var(--text-primary)]" id="mobile-menu-button">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </nav>
+                <!-- Mobile menu -->
+                <div class="md:hidden absolute top-full left-0 right-0 bg-[var(--secondary-color)] border-b border-[#f3ede7] hidden" id="mobile-menu">
+                    <div class="px-10 py-4 space-y-4">
+                        <a class="block nav-link" href="#home">Home</a>
+                        <a class="block nav-link" href="menu.html">Menu</a>
+                        <a class="block nav-link" href="#about">About</a>
+                        <a class="block nav-link" href="#gallery">Gallery</a>
+                        <a class="block nav-link" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </header>
+            
+            <main class="flex-1">
+                <section class="px-10 sm:px-20 md:px-40 flex justify-center py-10 md:py-20" id="home">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="flex min-h-[520px] flex-col gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-8 md:p-12 items-center justify-center text-center shadow-lg" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4pEZgGyi6YkPm0djuM7o4BkbSNWD0ponWpSo2jS64D0VG-rvZ-lxcQsKT6AOTUBg_IO6GBmVsRwH-mdk1V-NBI_JpRqaOz18OdJsSQ9nc_KV44oLaj6RBlgq7la6vFuoL-bZ7AZGWMI8TE8fBwqBdPHH8N5SC1xBGuJJ4U9HnydOJfz8AIV_4dDTkT5jcbvAdR55bYA6QXVFTQ7CboaooFxi-JGxqLudkmNt6dJ_7s6fAXW2zGa2S1-UVkHbrlZ5_rUBEDoupAGTm");'>
+                            <div class="flex flex-col gap-4">
+                                <h1 class="text-white text-4xl md:text-6xl font-black tracking-tighter">Experience the Art of Dining</h1>
+                                <p class="text-white/90 text-base md:text-lg max-w-2xl mx-auto">Indulge in a culinary journey where every dish is a masterpiece, crafted with passion and precision.</p>
+                            </div>
+                            <button class="mt-4 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[var(--primary-color)] text-white text-base font-bold shadow-md transition-all hover:bg-[var(--primary-color)]/90 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--primary-color)]" onclick="window.location.href='menu.html'">
+                                <span class="truncate">Explore Menu</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="px-10 sm:px-20 md:px-40 py-10 md:py-20 bg-white" id="menu">
+                    <div class="max-w-[1200px] mx-auto">
+                        <h2 class="text-[var(--text-primary)] text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center">Our Signature Dishes</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="signature-dishes">
+                            <div class="flex flex-col gap-4 rounded-lg overflow-hidden group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex flex-col transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmkXXu6k_k999uPRewo7h8bSybcNGvYtmvdckfOP4b407T-GZCgxIsWQppD915kGRKok3trDOpfnZTonPzuxDnLnZUTITySJtyeG_A_eq8SbqftIgPj7TZunjqJtbyiT7qB4_rKsOXpoGJMtm_eASaMMD0xvKyUJaifbktYI1wgLfBdBqn-akdzEb-ZFZZBltG2o0I9oo8y9T3L-jZ9TsjIA1EMzVqY6r-hER0ukpwtprbovWyJkG7_bGNrBEaaWXB1hSZPvt12Psp");'></div>
+                                <div class="text-center">
+                                    <h3 class="text-[var(--text-primary)] text-xl font-bold">Pasta Primavera</h3>
+                                    <p class="text-[var(--text-secondary)] text-sm">Fresh pasta with seasonal vegetables and a light cream sauce.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 rounded-lg overflow-hidden group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex flex-col transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUzhH9_i3UHL4LCobyXOAPqyQ9HoBFe388akOR9LuPFIYy6Eg1VZuxcNuWCLusZwku02yBX8wF3eJmL8gpOhJc1O7OBlLa4D0KkRbTRFKQDc6u9TPnzUqJyGxXjIwmqD9uIUQEbDHHWxIp4V3M__uLwQ0iOAxGEgZvny0pCoFQIMvBkpJQuIZVNBdK5Yq4Fbfl19NrUCcyFRvUNkKRdyr6lT2N1B_V0jVJ7N-zMwXhs8swtGK9rV4CLIkg87tk0Xl--vTVi1U1NmHT");'></div>
+                                <div class="text-center">
+                                    <h3 class="text-[var(--text-primary)] text-xl font-bold">Grilled Salmon</h3>
+                                    <p class="text-[var(--text-secondary)] text-sm">Perfectly grilled salmon with a side of roasted vegetables.</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-4 rounded-lg overflow-hidden group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg flex flex-col transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAM1P-KCVVZAGkBfZJIiD575GvVw_8gQB4cAg1vNkjU-WPnNjDXN9b0C9Jn3YjYYDOhvi9Ypro-WakCqov_Ixn7SZznE4u837-hIXb8YPkRZchR_09wZn_Kjf6jqQ6gBecmrSD-sM9JhMNhB1Rdw9EwjXRY7PDy67KY4sP1ziqiCo8l7IcYJTU2cM8FWeddM1fCezN8PfTQ-tFs2kCUJVjw0DpWOsev32S9IuO64oOtA-6cISCs2A_SmBX-WQOqXHLr_k0_2LGbHvOD");'></div>
+                                <div class="text-center">
+                                    <h3 class="text-[var(--text-primary)] text-xl font-bold">Filet Mignon</h3>
+                                    <p class="text-[var(--text-secondary)] text-sm">Tender filet mignon with a rich red wine reduction.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="px-10 sm:px-20 md:px-40 py-10 md:py-20" id="about">
+                    <div class="max-w-[1200px] mx-auto text-center">
+                        <h2 class="text-[var(--text-primary)] text-3xl md:text-4xl font-bold tracking-tight mb-6">About Us</h2>
+                        <p class="text-[var(--text-primary)] text-base md:text-lg leading-relaxed max-w-3xl mx-auto">At The Culinary Canvas, we believe that dining is an art form. Our chefs meticulously select the finest ingredients to create dishes that are both visually stunning and incredibly delicious. Our goal is to provide an unforgettable dining experience that delights all your senses.</p>
+                    </div>
+                </section>
+                
+                <section class="px-10 sm:px-20 md:px-40 py-10 md:py-20 bg-white" id="gallery">
+                    <div class="max-w-[1200px] mx-auto">
+                        <h2 class="text-[var(--text-primary)] text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center">Gallery</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-grid">
+                            <div class="overflow-hidden rounded-lg shadow-md group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6zFbwTtzi-487-fnUtNcHzCf6sw9L1VOpnE4lagqr10lo23S0HcyGY0W8oq_xxmdblBygMBKZjL4bdd0gI9wn1DJRrFcZb2nDkdqGlWI89Hpo3LWhGO9KDbs2UCHvWnGRMZEASjG7nrF7D8T1rELDDeYlK_OewiC3tFtKqzL01uk4jObXW3UiElOayhVxneM8XWVaoope7aOOJa1C5e0rOg1JLc1z-WQtOjzUCuMAHWoSHW2CQJZ13Oaef5RLDNIQLyCImcoq2LwD");'></div>
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-md group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8oO_9Z_S-ZB-ehd7BMzanOtURhs9grt244HuMjnuL_2pbNA6uyXzwakHdjtBr31KuZKvAyCf5RqraBqmIFayerBZWWtgF_Y3qVdN69xjGVARYkyAzyVdyRQhqot0yqbrjuI1240xPD9NJkOmTUUMFBsQvOVD55MqUvr4WDMhzz48oXr5q6rZOMAQmr2XFo1gc7kJRt3UKcclGBX1Ro2MVHUKZmWT-8-sHdN9b--BbckknfEMYb3smsv1iA9AtwwK99N5xSuYmritA");'></div>
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-md group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDEANbhzCiXbeTqxJAJPW7H8aldx5-6u2Afd2Ygqn2hqCxLD13lg3nl6QI4PQTBT0doJThw8EtB7KOvj8sQj88qDzIl3DNRhCUuWiJuNlrp0Cu2m_AaW5YrNs2T4alaE7OF0N3dyLjWfw7l7FJhH2KnqSX-Kpdjjrzp5vkyIdmEf9SLjVRodR6CD8U7QVRn1tKKEwioZ-4ohmd5T4rQ3L0dW8eBOjrCdeBsTyKcruZlwCvPZ0jikDmeAidlH12IegtExJkt34JfeOY");'></div>
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-md group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAku0K2Z33r5DISBTR7HYmxUbh3mtOrrrU3sXqNIID-d5USXzze-jo1F5VL54kDMZb4hHC8YJG4XOtATqxXWwJPyghh4S1ai526o7a4PQeRtZUKtanLlh-jOMtGxQ2sggo8X7DYwPdP574UW2GSiAY7l_xOGH8g5IPBIV-p-LqFI65rGyXamwlCryb101hqrAMcglodFlolNeHIfZTe0Ooq1p3zqBLMXCxRdICX2Rk3laR7GXPVB-yMCUOMSDio5iy-uoIkNN1Kjm5I");'></div>
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-md group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDn7I7wIShlan4-Wfo13gQQdsNtnM_px1KLCWt2m5IvMs2J8Uat9baz6-o0njuiaijErHcewH2Ql-E4ZJlkuWYQib_kUUK7qTL5hKqh0G6bvyzLP0u6rWEHMV57fRQBCuUshvq4Wjaf1mOrEJ6tdgbfpfWKcyX8H8nXJUnb7dAwMolSORrOp9kXZ8NJK54UfbXijBI8zBVHLqrYJAD3J6IbCRhvS9RIh6-WRheyPCsuPlbhq_lhJjpwB3IL3fNLfUt_-m2I2MaMoFEI");'></div>
+                            </div>
+                            <div class="overflow-hidden rounded-lg shadow-md group">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZXED3hZyv5GHO3CJ6ysWCo6Vj7kWnMfCgyU75vHrnpweIzyuFv6BgxXfAP2z9kcbOYCMYku89QlD_NCQU8cUAol7APDLOio-fglm8fsSD9VqKSfFmUWRoxqvZ0esDoKr66B1_Fr7O3w7EqTodzSyo2zkK1cj084e8gOrF1I-snGhR2z6K-7A_r5yQMnRn62WrabJticww8xBYwqh5XNlo_q3CsvU065UXuI5k4X087u-MneTb1Cgd8DpS0j_ov13YmiVZXzCYOo1g");'></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="px-10 sm:px-20 md:px-40 py-10 md:py-20" id="contact">
+                    <div class="max-w-[1200px] mx-auto">
+                        <h2 class="text-[var(--text-primary)] text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center">Contact Us</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                            <div class="text-center md:text-left">
+                                <p class="text-[var(--text-primary)] text-lg mb-4">For reservations or inquiries, please reach out to us.</p>
+                                <div class="flex flex-col gap-4 items-center md:items-start">
+                                    <a class="flex items-center gap-3 text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors" href="tel:5551234567">
+                                        <span class="material-symbols-outlined">call</span>
+                                        <span>(555) 123-4567</span>
+                                    </a>
+                                    <a class="flex items-center gap-3 text-[var(--text-primary)] hover:text-[var(--primary-color)] transition-colors" href="mailto:reservations@culinarycanvas.com">
+                                        <span class="material-symbols-outlined">email</span>
+                                        <span>reservations@culinarycanvas.com</span>
+                                    </a>
+                                    <p class="flex items-center gap-3 text-[var(--text-primary)]">
+                                        <span class="material-symbols-outlined">location_on</span>
+                                        <span>123 Main Street, Anytown, USA</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg object-cover shadow-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQ41vP5uq-2e2ywhmEBg3eZtJPiK8cKfYjjRhtytivu6pFrTsJQzRPzEaUutJ2xdXbwTfCGxLHK5xSJCdUGkScnBCVI7T_zBKTSyXp7l4tsMgIehiMjl4s5lbrdcvwTm8vAlutYrcwvnDlk9GlSAX1zThE5S1lthkW-Ja29uKeXARseDMAUIE66F3FB_X_9UuSVERKUfXYsKfEbsYbrEFXZSy0yCwHvS02Gj4rRhBvoi6kRzfFrKFOwVa5wS1CGp-dghFGH6ndmQG4");'></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            
+            <footer class="bg-white border-t border-solid border-[#f3ede7]">
+                <div class="max-w-[1200px] mx-auto px-10 py-6 text-center text-sm text-[var(--text-secondary)]">
+                    © 2024 The Culinary Canvas. All Rights Reserved.
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        function highlightActiveSection() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('section-active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('section-active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightActiveSection);
+
+        // Load gallery from API
+        async function loadGallery() {
+            try {
+                const response = await fetch('http://localhost:5000/api/gallery?active=true');
+                if (response.ok) {
+                    const data = await response.json();
+                    const galleryGrid = document.getElementById('gallery-grid');
+                    
+                    if (data.success && data.data && data.data.length > 0) {
+                        galleryGrid.innerHTML = data.data.map(image => `
+                            <div class="overflow-hidden rounded-lg shadow-md group cursor-pointer" data-image-title="${image.title}">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("http://localhost:5000${image.url}");'></div>
+                            </div>
+                        `).join('');
+                        
+                        // Add click handlers for gallery images
+                        galleryGrid.querySelectorAll('[data-image-title]').forEach(item => {
+                            item.addEventListener('click', () => {
+                                const title = item.dataset.imageTitle;
+                                showImageModal(item.querySelector('div').style.backgroundImage, title);
+                            });
+                        });
+                    }
+                } else {
+                    // Fallback to localStorage for offline mode
+                    const localGallery = localStorage.getItem('websiteGallery');
+                    if (localGallery) {
+                        const galleryImages = JSON.parse(localGallery);
+                        const galleryGrid = document.getElementById('gallery-grid');
+                        
+                        galleryGrid.innerHTML = galleryImages.map(image => `
+                            <div class="overflow-hidden rounded-lg shadow-md group cursor-pointer" data-image-title="${image.title}">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover transition-transform duration-500 group-hover:scale-105" style='background-image: url("${image.url}");'></div>
+                            </div>
+                        `).join('');
+                    }
+                }
+            } catch (error) {
+                console.log('Gallery API not available, using default images');
+                // The default images are already in the HTML
+            }
+        }
+        
+        // Show image modal for gallery
+        function showImageModal(backgroundImage, title) {
+            const imageUrl = backgroundImage.match(/url\(["']?([^"']*)["']?\)/);
+            if (imageUrl) {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+                modal.innerHTML = `
+                    <div class="relative max-w-4xl max-h-[90vh] p-4">
+                        <img src="${imageUrl[1]}" alt="${title}" class="max-w-full max-h-full object-contain rounded-lg">
+                        <button class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                        <div class="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-3 rounded-lg">
+                            <h3 class="font-bold">${title}</h3>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Close modal on click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal || e.target.closest('button')) {
+                        modal.remove();
+                    }
+                });
+                
+                // Close on escape key
+                document.addEventListener('keydown', function escapeHandler(e) {
+                    if (e.key === 'Escape') {
+                        modal.remove();
+                        document.removeEventListener('keydown', escapeHandler);
+                    }
+                });
+            }
+        }
+
+        // Book table functionality  
+        const bookTableBtn = document.getElementById('book-table-btn');
+        if (bookTableBtn) {
+            bookTableBtn.addEventListener('click', () => {
+                // Simple reservation alert for now - could be enhanced with a modal
+                alert('Please call (555) 123-4567 to make a reservation or use our online booking system.');
+            });
+        }
+
+        // Load gallery on page load
+        document.addEventListener('DOMContentLoaded', loadGallery);
+    </script>
+</body>
+</html>

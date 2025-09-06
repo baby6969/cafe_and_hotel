@@ -1,0 +1,39 @@
+{
+  "name": "culinary-canvas-frontend",
+  "version": "1.0.0",
+  "description": "Professional restaurant website frontend for The Culinary Canvas",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "serve": "npx serve -s . -l 3000",
+    "dev": "python3 -m http.server 3000",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "echo 'Deploy to your static hosting service'"
+  },
+  "keywords": [
+    "restaurant",
+    "website",
+    "frontend",
+    "tailwind",
+    "responsive",
+    "admin-dashboard"
+  ],
+  "author": "The Culinary Canvas Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/culinary-canvas"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.3.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
+

@@ -1,0 +1,332 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <title>Menu - The Culinary Canvas</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #ec8013;
+        }
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-[#FCFAF8] text-[#1B140D]" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+        <header class="sticky top-0 z-50 w-full bg-[#fcfaf8]/80 backdrop-blur-sm">
+            <div class="layout-container mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-4">
+                    <a class="flex items-center gap-2" href="index.html">
+                        <svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                        <h1 class="text-xl font-bold tracking-tighter">The Culinary Canvas</h1>
+                    </a>
+                </div>
+                <nav class="hidden items-center gap-8 md:flex">
+                    <a class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium text-[var(--primary-color)]" href="menu.html">Menu</a>
+                    <a class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors" href="index.html#about">About</a>
+                    <a class="text-sm font-medium hover:text-[var(--primary-color)] transition-colors" href="index.html#contact">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button class="hidden lg:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-[var(--primary-color)] text-[#FCFAF8] text-sm font-bold leading-normal tracking-wide shadow-md hover:bg-opacity-90 transition-all">
+                        <span>Reserve a Table</span>
+                    </button>
+                    <button class="md:hidden rounded-md p-2 hover:bg-[#F3EDE7] transition-colors" id="mobile-menu-button">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden bg-[#fcfaf8] border-t border-[#f3ede7]" id="mobile-menu">
+                <div class="px-4 py-2 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-[#1B140D] font-medium">Home</a>
+                    <a href="menu.html" class="block px-3 py-2 text-[var(--primary-color)] font-medium">Menu</a>
+                    <a href="index.html#about" class="block px-3 py-2 text-[#1B140D] font-medium">About</a>
+                    <a href="index.html#contact" class="block px-3 py-2 text-[#1B140D] font-medium">Contact</a>
+                </div>
+            </div>
+        </header>
+        
+        <main class="flex-1">
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tighter">Our Menu</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-[#9A734C]">
+                        Explore our diverse menu, crafted with fresh, seasonal ingredients and a touch of culinary artistry. From appetizers to desserts, each dish is a masterpiece designed to delight your senses.
+                    </p>
+                </div>
+                
+                <div class="sticky top-[68px] z-40 bg-[#FCFAF8]/90 backdrop-blur-sm -mx-6 px-6 pb-2 mb-8">
+                    <div class="border-b border-[#E7DBCF]">
+                        <nav aria-label="Tabs" class="-mb-px flex justify-center space-x-8">
+                            <a class="category-tab border-[var(--primary-color)] text-[var(--primary-color)] whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm active" href="#" data-category="appetizers">Appetizers</a>
+                            <a class="category-tab border-transparent text-[#9A734C] hover:text-[#1B140D] hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm" href="#" data-category="main-courses">Main Courses</a>
+                            <a class="category-tab border-transparent text-[#9A734C] hover:text-[#1B140D] hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm" href="#" data-category="desserts">Desserts</a>
+                            <a class="category-tab border-transparent text-[#9A734C] hover:text-[#1B140D] hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-bold text-sm" href="#" data-category="drinks">Drinks</a>
+                        </nav>
+                    </div>
+                </div>
+                
+                <div class="space-y-16">
+                    <section id="appetizers" class="menu-section">
+                        <h3 class="text-3xl font-bold tracking-tight mb-8">Appetizers</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtqSGw92M9BJCfdl8EPrsj5y5fw--Ufh6xhjU9L7nY1kMiE4I64_FcdhO09znSLMv7zd-JALtDnYZPhPHQoEUI0ps1rOIuFT2el5xaRn_8CitFtLS6o-i9QXQKyzAdLexnrF0h_GEY052l2f0gqIfcHwLRfOSYm3wpS2pctFmN7ftHCyD2gUdEgXWyonGoqcmaBUUJeIuyqQIIDWUEKhgcdGGoLyuEchHPTdmhla4q60EdCcmKjBqIlRbZ82Wbt0FmlLy7NvdS4f8m");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Crispy Calamari</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$12</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">Tender calamari, lightly battered and fried to perfection, served with a zesty marinara sauce.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFZ0AEVu1xhwR-48AI877lnuzhv7JSsh-bhcrChxQHmj1sBsjDIAxW5BV5QxgU1H57SYtK8sZIYmXykcBXbIGDslj_LMPdCQ3N1k2wbAyAaa0OaI1dJccR20scuWix858SFKPyfE5IPFWejLmGS_hNDO65viGUFCRGD4NsjhZbwrXkeLMW77YXSQMVSjAd2ZNX4g0GmEw34C0_XQiTu1hxeg-HA1JBrK3AwqCXk3skVEn9McpEgbdN649CdvNpKVjzVuhwe6ly_P6G");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Bruschetta Trio</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$10</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A trio of toasted baguette slices topped with fresh tomato and basil, creamy ricotta and fig jam, and prosciutto with balsamic glaze.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCH2M5GyAZ8b9G0yOO3nLnOuofmAv57BnVC4zAEjlceRRCAhSSgu2BjzUjEnVcXD1JIXX94W0kD8Gev55-qH8rV6QjDLEfKCtQLOkPFkDSwEOFtl5t_dhQ_Jmnr6eXC3KK5JSc-V2U9nHPp7SK-naMWiDTnN4I0rZ06JysDAnpVWPXmCAVA1RbYNfX1OOJMU8vP0SWaqhgfBYK1VUr4wpA6uv1MfoP5Np2n7-VR-XcgnvmBuTa9K0OyU7wb1Q6LAfvdq2NfjbrMjC-r");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Spinach and Artichoke Dip</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$11</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A creamy blend of spinach, artichoke hearts, and cheeses, served with warm pita bread.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="main-courses" class="menu-section hidden">
+                        <h3 class="text-3xl font-bold tracking-tight mb-8">Main Courses</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFC8DymIHQhtmUugrSXA0fjEPWdBk7f7IVbtASEuWkZOEn_n9qAFdrY7CQ28fgbYbIg6EEjL9PTCwc9FNLgcBQxkU17-UYhS7BulI-Cc4-TehlFuyg7dHH9r9ReYnX8oUghC9e59kAfJvxwhYsFy2uEgg9_2z4B2pHy6fXOD15tOjVwMjOM-W5yt5f2VDmBH4Vwq3f0NYBnH8D2bt06_4CUdrzmFfnZop-KiCawcgPhsmDVLf3a_3R58Bujm5q3hhCORpIQ7npaMMk");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Grilled Salmon</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$24</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">Fresh Atlantic salmon, grilled to perfection and served with roasted asparagus and lemon-dill sauce.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEXEwnNvFEKC6HDvzI5c5tjQuiy9OWsyNmgMe9P-EDzBXr9eR-a1gpgXkQW61cNNkiIpx7ANtrjogkiGGF7HnK1olx1zOhNEabzkYCC4CuE0U8x8D1ppL70sBPfCNeLnLjeHSceTRp3gBkZL90Tq9fsRtmboUWFQgGz_T8g3KxmIug0WHjPtgXbmFsZRC3TiZEA6uYImaMVZU_BUrQ0AXua-qIuxYpWNAiie0yhNUGmlqRYKzEsQdFCw5WBTs7ZzJZMdHvxiXHHxR1");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Filet Mignon</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$32</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A tender 8oz filet mignon, cooked to your preference and served with mashed potatoes and red wine reduction.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC8iFUUAAwQ8smZ9OFRMJuqpcBfRE9HFWQh0nUlFYeXoVt_M8j9or7h2p6kzCC2yrhWzNz1Pv1AJ6dXb135L85kJhCqgVVFO60fN8NzSN9V6RJ7zBG5ZQcX_DRmiGg1vpfC_CyJpTEl34nj9AjOGAPWz4pgUYt1ctJQPWE9fpTitqd4xyGP7pkg24uOWVfSo2bzZdyCCu-en7I6224ZLeUyqVeMtNUImBLNRcj2u6OyqkywcRU0WSd0zBmfNLC0ruAGbXYErrKL7H62");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Vegetable Paella</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$20</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A vibrant Spanish rice dish with a medley of seasonal vegetables, saffron, and a hint of smoked paprika.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="desserts" class="menu-section hidden">
+                        <h3 class="text-3xl font-bold tracking-tight mb-8">Desserts</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmB95kUttEZCvMXFYWbcaPO86e_e_voaxQIFNAW9miD5-Iv2HN5WRRgOEymBPYVYNHzLS1wCq3ijIAnOuiHEGw0jZnFSVqUVrKM1uP1T7QLD0ZOM3UyL72ix3eshz5JTOZyyy9Jg-KsQSOt84X_pXrhxTfE-1uk9KAthNGHAlX2XD0CpsADa0bVlmPKreSr8y_jiZ_9gHSBMFhu6InIheRxij7eOY11d8G1D6ExFm0EToRQFftvz5sf5h2yOKHlGQGeBT175R7bMqk");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Chocolate Lava Cake</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$9</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A warm, gooey chocolate cake with a molten chocolate center, served with vanilla bean ice cream.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuBtnuBIQIDnQpPiwb3-MEU7LJfY1U-BHqbrEuGTgKzYpqjK2MkOojgI4VXfThKO030JhX9oQklr_OpIw1hvWZGdOAC54KalldrZz6NtNmmdbh8PyfaaBOVKpHfBOEtFRdqKXghRI_jWkNHufR1RuOQ3fC-XHulduJoTGK10cxR9HSn8Ba2zNR3HQKMw3hBjSJSvQarzdFhjfyX1nuUNNbKkc_TJP3nlUi0_Zro8-PQ-JRiEQaPyJA8lWYP9a3Vy5RYCgAmh__uv6g");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Crème Brûlée</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$8</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A classic French custard dessert with a caramelized sugar crust.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjGNsdvK54ibFtNylxirwwLZiWjP5ergMaLuS_XE3Aq7Qx8wleBn7rutnRie89FuQkkVLREIkHzD0rEMGMm5MB-zS0jnDcGgQwwIfj6o_3-Z2JTYzxtofo1NKP2xB_iHvPlfYLE4fNHy2o152YZoKvAocPI5Rnj9icO_7YyeEHepxuH-wnNNtt-qzbAzJm4YprocD5O5uI-grkF4tpL-CjvxxWTU4mhg-Q2O05QpK729fNXy7gMSyc1iNLp6ebogSQZwXY4G20EWqe");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Seasonal Fruit Tart</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$10</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A delicate pastry tart filled with a creamy custard and topped with fresh, seasonal fruits.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="drinks" class="menu-section hidden">
+                        <h3 class="text-3xl font-bold tracking-tight mb-8">Drinks</h3>
+                        <div class="grid grid-cols-1 gap-8">
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFxZWIzXKYQZvu8LKzh3d7beYNNycpjY5jnvppsPGJGXMHxRUgTmqSVtV34xw8FtQAHmEAC85MnGYJRVWgD9jhpD7AOluJzi2ypiuPlOUgnWChAlr_gYdi8wr0vonBhSnwN9CnzWporEhy3x_OyV16hdSheZr00kBIZ7GyIclbPiurkSKiv8UVxP4HbGDHLYhE0TMgyBFXkgkrxZRZ2G3RGCBjQhxEDv8LmhoKFUgL0H0CCMJVmWhDy-PM6N_a8b819XCJVscN3NhL");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">House Red Wine</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$8/glass</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A full-bodied red wine with notes of cherry and oak.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiOP3JLO9L5b3J25yjyQmpz1ZlO_NVwUHp5VAgAYgmDTvErrJPVVbo_bWdg7p7PNAWLadaInxlAjcVURVhmM58VSDDdX1dWfUZDTdMEDmKPVv2t6GfuXklFXp1Uwpeo8wntEsts-kcFYtKpGxWmCrvz9Hg3QyKoMos6L8r31xMZAF5G9INZxlCFVnRaHyfes5cRPRKJLJKxFK73coj0XUCcNKnPtQZlazyf7GNVuiR2Ijd3uU-Cqfw9R_ves8lNtO6FYVpXNormTEo");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">House White Wine</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$7/glass</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A crisp white wine with hints of citrus and green apple.</p>
+                                </div>
+                            </div>
+                            <div class="group flex flex-col sm:flex-row items-start gap-6 rounded-lg p-4 transition-all hover:bg-[#F3EDE7]/50">
+                                <div class="w-full sm:w-48 h-48 sm:h-32 flex-shrink-0">
+                                    <div class="w-full h-full bg-cover bg-center rounded-lg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYvkng8qXh8bAluH-nlnE2r0dNsJ5pnA8vU0mA7StRfPsTwg1oIuWX37tFh9V_CKmXIS82k7fwHe91J-hiA9errI790MYbTubs-dIhQcLg3zH8d5Mt0tIVN7l1oHIHK3NiGTIxbav26EkXmZSA9-oDjLb0QT-JWSvWAFuwVnhMpxJ3YU4WJau0E8QoXAB6V3nBFB44YfSSsolbelz8ZuCPLZFkyTEgVDD-qMEHQVl3vHLIKgOgRPOOoLRCIB1w78cLFT10RLqIIbDz");'></div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <h4 class="text-lg font-bold">Craft Beer Selection</h4>
+                                        <p class="text-lg font-bold text-[var(--primary-color)]">$6-8</p>
+                                    </div>
+                                    <p class="text-[#9A734C] mt-1">A rotating selection of local and international craft beers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                
+                <div class="mt-20 text-center">
+                    <button class="inline-flex items-center gap-2 min-w-[84px] max-w-[480px] cursor-pointer justify-center overflow-hidden rounded-md h-12 px-8 bg-transparent border border-[#E7DBCF] text-sm font-bold tracking-wide hover:bg-[#F3EDE7] transition-colors">
+                        <span class="material-symbols-outlined">picture_as_pdf</span>
+                        <span>View Full Menu (PDF)</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-white border-t border-solid border-[#f3ede7]">
+            <div class="max-w-[1200px] mx-auto px-10 py-6 text-center text-sm text-[#9A734C]">
+                © 2024 The Culinary Canvas. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Category filtering functionality
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const menuSections = document.querySelectorAll('.menu-section');
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all tabs
+                categoryTabs.forEach(t => {
+                    t.classList.remove('border-[var(--primary-color)]', 'text-[var(--primary-color)]', 'active');
+                    t.classList.add('border-transparent', 'text-[#9A734C]');
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.remove('border-transparent', 'text-[#9A734C]');
+                tab.classList.add('border-[var(--primary-color)]', 'text-[var(--primary-color)]', 'active');
+                
+                // Hide all sections
+                menuSections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show target section
+                const targetCategory = tab.getAttribute('data-category');
+                const targetSection = document.getElementById(targetCategory);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Load menu data from API
+        async function loadMenuData() {
+            try {
+                const response = await fetch('http://localhost:5000/api/menu');
+                if (response.ok) {
+                    const menuData = await response.json();
+                    renderMenuItems(menuData);
+                }
+            } catch (error) {
+                console.log('Menu API not available, using default menu items');
+            }
+        }
+
+        function renderMenuItems(menuData) {
+            // This function would populate the menu sections with data from the API
+            // For now, we're using the static HTML content
+        }
+
+        // Initialize menu on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMenuData();
+        });
+    </script>
+</body>
+</html>
