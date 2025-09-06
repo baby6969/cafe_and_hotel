@@ -1,0 +1,11 @@
+[
+  {
+    "username": "admin",
+    "email": "admin@culinarycanvas.com",
+    "password": "$2b$10$AKbmOjSOmvWuNoxUME.3AeKGVtxnchUvdNTDsV.mWIfy5j.BtQBlW",
+    "role": "super-admin",
+    "_id": "1757163897540",
+    "createdAt": "2025-09-06T13:04:57.540Z",
+    "updatedAt": "2025-09-06T13:04:57.540Z"
+  }
+]
